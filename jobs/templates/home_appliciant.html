@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашняя страница соискателя</title>
+</head>
+<body>
+    <h1>Домашняя страница соискателя</h1>
+    <h2>Ваше резюме:</h2>
+    <ul>
+        {% for resume in resumes %}
+            <li>{{ resume.title }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Доступные вакансии:</h2>
+    <ul>
+        {% for vacancy in vacancies %}
+            <li>{{ vacancy.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

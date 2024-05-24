@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашняя страница</title>
+</head>
+<body>
+        <h1>Портал для поиска вакансий</h1>
+
+    <a href="{% url 'create_vacancy' %}">
+        <button>Создать вакансию</button>
+    </a>
+
+    <a href="{% url 'create_resume' %}">
+        <button>Создать резюме</button>
+    </a>
+
+    <a href="{% url 'job_list' %}">Список вакансий</a>
+
+    <a href="{% url 'register' %}">Регистрация</a>
+
+    <a href="{% url 'login' %}">Вход</a>
+</body>
+</html>

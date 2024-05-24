@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашняя страница компании</title>
+</head>
+<body>
+    <h1>Домашняя страница компании</h1>
+     <a href="{% url 'create_vacancy' %}">
+        <button>Создать вакансию</button>
+    </a>
+    <h2>Ваши вакансии:</h2>
+    <ul>
+        {% for vacancy in vacancies %}
+            <li>{{ vacancy.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacancy List</title>
+</head>
+<body>
+    <h1>Vacancy List</h1>
+
+    <form method="GET" action="{% url 'vacancy_list' %}">
+        <label for="category">Select Category:</label>
+        <select id="category" name="category">
+            <option value="" selected>All Categories</option>
+            <option value="IT">IT</option>
+            <option value="Finance">Finance</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    {% if vacancies %}
+        <ul>
+            {% for vacancy in vacancies %}
+                <li>
+                    <h2>{{ vacancy.title }}</h2>
+                    <p><strong>Category:</strong> {{ vacancy.category }}</p>
+                    <p><strong>Description:</strong> {{ vacancy.description }}</p>
+                    <p><a href="{% url 'apply_vacancy' vacancy.id %}">Apply</a></p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No vacancies found.</p>
+    {% endif %}
+</body>
+</html>

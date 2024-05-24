@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Создать вакансию{% endblock %}
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Создать вакансию</button>
+</form>
+        {% csrf_token %}
+        <label for="title">Название вакансии:</label><br>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="description">Описание:</label><br>
+        <textarea id="description" name="description"></textarea><br><br>
+        <button type="submit">Создать</button>
+    </form>
+{% endblock %}
+
